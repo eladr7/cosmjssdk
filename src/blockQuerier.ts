@@ -1,5 +1,6 @@
 import { Block, StargateClient } from "@cosmjs/stargate";
 import { osmosis } from "osmojs";
+import { generateBlockInfoHTML } from "./definitions";
 const { createRPCQueryClient } = osmosis.ClientFactory;
 
 const rpcEndpoint = process.env.RPC_ENDPOINT;
@@ -36,13 +37,12 @@ export const blockQuerier = async (outputElement: HTMLElement) => {
       console.log("Block hash: ", block.id);
       console.log("Number of pools: ", numPools);
 
-      outputElement.innerHTML = `
-        <div style="display: flex; flex-direction: column; background-color: lightgrey; padding: 10px; margin: 10px; border-radius: 10px; border: 1px solid grey;">
-          <p style="color: darkblue;">Block height: ${block.header.height}</p>
-          <p style="color: darkblue;">Block hash: ${block.id}</p>
-          <p style="color: darkblue;">Number of pools: ${numPools}</p>
-        </div>
-      `;
+      // Write the block data to the browser
+      outputElement.innerHTML = generateBlockInfoHTML(
+        block.header.height,
+        block.id,
+        numPools
+      );
     }
 
     // Sleep for 1 second before querying again
