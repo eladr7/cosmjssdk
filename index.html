@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Osmosis Blocks Tracker</title>
+  </head>
+  <body>
+    <button id="btn-start">Start Tracking Osmosis</button>
+    <div id="output"></div>
+    <script src="dist/bundle.js"></script>
+    <script>
+      document
+        .getElementById("btn-start")
+        .addEventListener("click", function () {
+          window.mySdk
+            .blockQuerier(document.getElementById("output"))
+            .catch(console.error);
+        });
+    </script>
+  </body>
+</html>
