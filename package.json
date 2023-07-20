@@ -12,7 +12,8 @@
   "dependencies": {
     "@cosmjs/stargate": "^0.31.0",
     "cosmjs-types": "^0.8.0",
-    "cosmwasm": "^1.1.1"
+    "cosmwasm": "^1.1.1",
+    "osmojs": "^16.2.1"
   },
   "devDependencies": {
     "ts-loader": "^9.4.4",
