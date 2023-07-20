@@ -8,5 +8,17 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@cosmjs/stargate": "^0.31.0",
+    "cosmjs-types": "^0.8.0",
+    "cosmwasm": "^1.1.1"
+  },
+  "devDependencies": {
+    "ts-loader": "^9.4.4",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.1.6",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4"
+  }
 }
